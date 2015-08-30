@@ -1,0 +1,69 @@
+#!/bin/bash
+
+PM="python manage.py"
+PROJ="$(pwd)/api"
+
+build() {
+    echo
+    echo "########### BUILD ###########"
+
+    if makemigrations; then
+        if migrate; then
+            if test; then
+                if populate; then
+                    if createsuperuser; then
+                        if runserver; then
+                            echo "All done!"
+                        fi
+                    fi
+                fi
+            fi
+        fi
+    fi
+}
+
+createsuperuser() {
+    echo
+    echo "########### CREATE SUPERUSER ###########"
+
+    cd ${PROJ} && ${PM} createsuperuser
+}
+
+makemigrations() {
+    echo
+    echo "########### MAKE MIGRATIONS ###########"
+
+    cd ${PROJ} && ${PM} makemigrations
+}
+
+migrate() {
+    echo
+    echo "########### MIGRATE ###########"
+
+    cd ${PROJ} && ${PM} migrate
+}
+
+populate() {
+    echo
+    echo "########### POPULATE ###########"
+
+    cd ${PROJ} && ${PM} populate
+}
+
+runserver() {
+    echo
+    echo "########### RUN SERVER ###########"
+
+    cd ${PROJ} && ${PM} runserver
+}
+
+test() {
+    echo
+    echo "########### TEST ###########"
+
+    cd ${PROJ} && ${PM} test
+}
+
+${1}
+
+exit 0
