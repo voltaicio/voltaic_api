@@ -1,18 +1,18 @@
 from haystack import indexes
 
-from .models import Post
+from .models import Project
 
 
-class PostIndex(indexes.SearchIndex, indexes.Indexable):
+class ProjectIndex(indexes.SearchIndex, indexes.Indexable):
     """
     """
 
-    body = indexes.CharField(model_attr="body")
+    description = indexes.CharField(model_attr="description")
     text = indexes.CharField(document=True, use_template=True)
     title = indexes.CharField(model_attr="title")
 
     def get_model(self):
-        return Post
+        return Project
 
     def index_queryset(self, using=None):
         """
