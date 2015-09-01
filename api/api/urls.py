@@ -16,8 +16,15 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from rest_framework import routers
+
+from search.views import SearchView
+
+router = routers.DefaultRouter()
+router.register(r"search", SearchView, base_name="search")
+
 urlpatterns = [
+    url(r"^v1/", include(router.urls)),
     url(r"^grappelli/", include("grappelli.urls")),
     url(r'^admin/', include(admin.site.urls)),
-    url(r"^search/", include("haystack.urls")),
 ]

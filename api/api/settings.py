@@ -58,10 +58,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # 3RD PARTY
     "haystack",
+    "rest_framework",
     # BEGIN CUSTOM
     "blog",
     "photos",
     "projects",
+    "search",
     "taxonomy",
     "utils",
 )
