@@ -96,4 +96,5 @@ class AbstractBase(
     """
     """
 
-    pass
+    def get_model_type(self):
+        return self._meta.verbose_name

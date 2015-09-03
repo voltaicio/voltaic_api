@@ -8,6 +8,7 @@ class PostIndex(indexes.SearchIndex, indexes.Indexable):
     """
 
     body = indexes.CharField(model_attr="body")
+    model_type = indexes.CharField(model_attr="get_model_type")
     text = indexes.CharField(document=True, use_template=True)
     title = indexes.CharField(model_attr="title")
 

@@ -8,6 +8,7 @@ class ProjectIndex(indexes.SearchIndex, indexes.Indexable):
     """
 
     description = indexes.CharField(model_attr="description")
+    model_type = indexes.CharField(model_attr="get_model_type")
     text = indexes.CharField(document=True, use_template=True)
     title = indexes.CharField(model_attr="title")
 
