@@ -24,7 +24,7 @@ router = routers.DefaultRouter()
 router.register(r"search", SearchView, base_name="search")
 
 urlpatterns = [
-    url(r"^v1/", include(router.urls)),
+    url(r"^v1/", include(router.urls, namespace="api")),
     url(r"^grappelli/", include("grappelli.urls")),
     url(r'^admin/', include(admin.site.urls)),
 ]

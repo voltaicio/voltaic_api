@@ -57,6 +57,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 3RD PARTY
+    "corsheaders",
     "haystack",
     "rest_framework",
     # BEGIN CUSTOM
@@ -70,6 +71,7 @@ INSTALLED_APPS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -143,3 +145,5 @@ HAYSTACK_CONNECTIONS = {
         "PATH": os.path.join(BASE_DIR, "whoosh_index")
     }
 }
+
+CORS_ORIGIN_WHITELIST = ("127.0.0.1:8080",)
