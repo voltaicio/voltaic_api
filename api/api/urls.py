@@ -18,10 +18,12 @@ from django.contrib import admin
 
 from rest_framework import routers
 
+from photos.views import PhotoViewSet
 from search.views import SearchView
 
 router = routers.DefaultRouter()
 router.register(r"search", SearchView, base_name="search")
+router.register(r"photos", PhotoViewSet, base_name="photo")
 
 urlpatterns = [
     url(r"^v1/", include(router.urls, namespace="api")),
