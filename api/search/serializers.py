@@ -11,4 +11,4 @@ class SearchSerializer(HaystackSerializer):
 
     class Meta:
         index_classes = [PhotoIndex, PostIndex, ProjectIndex]
-        fields = ["body", "description", "model_type", "title"]
+        fields = ["body", "description", "id", "model_type", "title"]
