@@ -18,6 +18,7 @@ from django.contrib import admin
 
 from rest_framework import routers
 
+from blog.views import PostViewSet
 from photos.views import PhotoViewSet
 from projects.views import ProjectViewSet
 from search.views import SearchView
@@ -25,6 +26,7 @@ from search.views import SearchView
 router = routers.DefaultRouter()
 router.register(r"search", SearchView, base_name="search")
 router.register(r"photos", PhotoViewSet, base_name="photo")
+router.register(r"posts", PostViewSet, base_name="post")
 router.register(r"projects", ProjectViewSet, base_name="project")
 
 urlpatterns = [
