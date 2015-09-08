@@ -13,7 +13,8 @@ class PostVIewSetTestCase(APITestCase):
     def test_get_detail_not_found(self):
         """404"""
 
-        response = self.client.get(reverse("api:post-detail", kwargs={"pk": 0}))
+        response = self.client.get(
+            reverse("api:post-detail", kwargs={"slug": "test"}))
         self.assertEqual(response.status_code, 404)
 
     def test_get_detail_ok(self):
@@ -21,7 +22,7 @@ class PostVIewSetTestCase(APITestCase):
 
         o = PostFactory.create(is_active=True)
         response = self.client.get(
-            reverse("api:post-detail", kwargs={"pk": o.id}))
+            reverse("api:post-detail", kwargs={"slug": o.slug}))
         self.assertEqual(response.status_code, 200)
 
     def test_get_list_ok(self):

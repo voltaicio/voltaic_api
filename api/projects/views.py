@@ -11,5 +11,6 @@ class ProjectViewSet(
     """
     """
 
+    lookup_field = "slug"
     queryset = Project.objects.filter(is_active=True)
     serializer_class = ProjectSerializer

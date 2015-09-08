@@ -11,5 +11,6 @@ class PhotoViewSet(
     """
     """
 
+    lookup_field = "slug"
     queryset = Photo.objects.filter(is_active=True)
     serializer_class = PhotoSerializer

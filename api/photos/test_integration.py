@@ -14,7 +14,7 @@ class PhotoViewSetTestCase(APITestCase):
         """404"""
 
         response = self.client.get(
-            reverse("api:photo-detail", kwargs={"pk": 0}))
+            reverse("api:photo-detail", kwargs={"slug": "test"}))
         self.assertEqual(response.status_code, 404)
 
     def test_get_detail_ok(self):
@@ -22,7 +22,7 @@ class PhotoViewSetTestCase(APITestCase):
 
         o = PhotoFactory.create(is_active=True)
         response = self.client.get(
-            reverse("api:photo-detail", kwargs={"pk": o.id}))
+            reverse("api:photo-detail", kwargs={"slug": o.slug}))
         self.assertEqual(response.status_code, 200)
 
     def test_get_list_ok(self):
