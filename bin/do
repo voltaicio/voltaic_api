@@ -64,6 +64,7 @@ test() {
     cd ${PROJ} && ${PM} test
 }
 
+source /home/jondbaker/.venv/voltaic/bin/activate
 ${1}
 
 exit 0
