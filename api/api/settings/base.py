@@ -31,7 +31,8 @@ def get_env_variable(var):
             raise ImproperlyConfigured(
                 "Set the {0} environment variable.".format(var))
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,11 +40,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_env_variable("VOLTAIC_SECRET_KEY")
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -141,5 +137,3 @@ HAYSTACK_CONNECTIONS = {
         "PATH": os.path.join(BASE_DIR, "whoosh_index")
     }
 }
-
-CORS_ORIGIN_WHITELIST = ("127.0.0.1:8080",)
