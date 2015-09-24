@@ -1,5 +1,6 @@
 *.pyc
 *.swp
 api/conf.py
+api/db.sqlite3
 api/media
 api/whoosh_index
