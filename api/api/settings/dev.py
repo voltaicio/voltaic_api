@@ -1,5 +1,5 @@
 from .base import *
 
-CORS_ORIGIN_WHITELIST = ("127.0.0.1:8080",)
+CORS_ORIGIN_ALLOW_ALL = True
 
 DEBUG = True
