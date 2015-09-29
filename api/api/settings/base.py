@@ -58,6 +58,7 @@ INSTALLED_APPS = (
     "rest_framework",
     # BEGIN CUSTOM
     "blog",
+    "core",
     "photos",
     "projects",
     "search",
@@ -142,3 +143,5 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 25
 }
+
+GRAPPELLI_ADMIN_TITLE = "Voltaic Technicreative"
