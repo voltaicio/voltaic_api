@@ -12,5 +12,6 @@ class ProjectViewSet(
     """
 
     lookup_field = "slug"
+    ordering_fields = ("created", "title",)
     queryset = Project.objects.filter(is_active=True)
     serializer_class = ProjectSerializer

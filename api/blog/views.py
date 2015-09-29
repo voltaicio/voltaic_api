@@ -12,5 +12,6 @@ class PostViewSet(
     """
 
     lookup_field = "slug"
+    ordering_fields = ("created", "title",)
     queryset = Post.objects.filter(is_active=True)
     serializer_class = PostSerializer

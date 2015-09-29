@@ -12,5 +12,6 @@ class PhotoViewSet(
     """
 
     lookup_field = "slug"
+    ordering_fields = ("created", "title",)
     queryset = Photo.objects.filter(is_active=True)
     serializer_class = PhotoSerializer
