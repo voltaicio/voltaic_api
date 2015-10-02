@@ -1,9 +1,10 @@
 from django.contrib import admin
 
 from .models import Post
+from utils.admin import WYSIWYG
 
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(WYSIWYG, admin.ModelAdmin):
     """
     An admin class for Posts.
     """
@@ -21,11 +22,6 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ("is_active", "tags",)
     readonly_fields = ("created", "id", "modified", "slug",)
     search_fiels = ("title",)
-
-    class Media:
-        js = [
-            "/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js",
-            "/static/grappelli/tinymce_setup/tinymce_setup.js"]
 
 
 admin.site.register(Post, PostAdmin)

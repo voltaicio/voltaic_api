@@ -1,9 +1,10 @@
 from django.contrib import admin
 
 from .models import Project
+from utils.admin import WYSIWYG
 
 
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(WYSIWYG, admin.ModelAdmin):
     """
     An admin class for Projects.
     """
