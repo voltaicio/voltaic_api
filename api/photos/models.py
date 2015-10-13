@@ -11,5 +11,8 @@ class Photo(AbstractBase):
     description = models.TextField(_("description"))
     image = models.ImageField(_("image"), upload_to="photo_image/")
 
+    class Meta:
+        ordering = ["-created"]
+
     def __str__(self):
         return self.title

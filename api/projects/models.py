@@ -10,5 +10,8 @@ class Project(AbstractBase):
 
     description = models.TextField(_("description"))
 
+    class Meta:
+        ordering = ["-created"]
+
     def __str__(self):
         return self.title
