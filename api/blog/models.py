@@ -9,6 +9,7 @@ class Post(AbstractBase):
     """
 
     body = models.TextField(_("body"))
+    subtitle = models.CharField(_("subtitle"), blank=False, max_length=128)
 
     class Meta:
         ordering = ["-created"]

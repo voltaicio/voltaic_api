@@ -13,6 +13,7 @@ class PostFactory(factory.DjangoModelFactory):
 
     body = COMMON_P
     is_active = fuzzy.FuzzyChoice([False, True])
+    subtitle = factory.Sequence(lambda n: "post-subtitle-{0}".format(n))
     title = factory.Sequence(lambda n: "post-title-{0}".format(n))
 
     class Meta:

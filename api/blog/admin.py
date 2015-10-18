@@ -11,14 +11,14 @@ class PostAdmin(WYSIWYG, admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            "fields": ("title", "body", "is_active", "tags",)
+            "fields": ("title", "subtitle", "body", "is_active", "tags",)
         }),
         ("Meta", {
             "classes": ("grp-collapse grp-closed",),
             "fields": ("created", "id", "modified", "slug",)
         })
     )
-    list_display = ("id", "title", "is_active", "created", "modified",)
+    list_display = ("id", "title", "subtitle", "is_active", "created", "modified",)
     list_filter = ("is_active", "tags",)
     readonly_fields = ("created", "id", "modified", "slug",)
     search_fiels = ("title",)
