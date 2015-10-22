@@ -18,7 +18,6 @@ class TagAdmin(admin.ModelAdmin):
         })
     )
     list_display = ("id", "title", "slug", "created",)
-    list_filter = ("tags",)
     readonly_fields = ("created", "id", "modified", "slug",)
     search_fiels = ("title",)
 
