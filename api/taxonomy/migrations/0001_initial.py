@@ -15,12 +15,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Tag',
             fields=[
-                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
+                ('created', model_utils.fields.AutoCreatedField(editable=False, verbose_name='created', default=django.utils.timezone.now)),
+                ('modified', model_utils.fields.AutoLastModifiedField(editable=False, verbose_name='modified', default=django.utils.timezone.now)),
                 ('slug', models.SlugField(unique=True, verbose_name='slug')),
-                ('title', models.CharField(max_length=128, verbose_name='title')),
-                ('tags', models.ManyToManyField(blank=True, verbose_name='tags', to='taxonomy.Tag')),
+                ('title', models.CharField(verbose_name='title', max_length=128)),
+                ('tags', models.ManyToManyField(verbose_name='tags', to='taxonomy.Tag', blank=True)),
             ],
             options={
                 'ordering': ['title'],
