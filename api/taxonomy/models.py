@@ -1,7 +1,7 @@
-from utils.models import Creatable, Modifiable, Sluggable, Taggable, Titleable
+from utils.models import Creatable, Modifiable, Sluggable, Titleable
 
 
-class Tag(Creatable, Modifiable, Sluggable, Taggable, Titleable):
+class Tag(Creatable, Modifiable, Sluggable, Titleable):
     """
     """
 
